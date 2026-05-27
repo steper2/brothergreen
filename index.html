@@ -29,6 +29,15 @@
         .hero-gradient {
             background: linear-gradient(0deg, #121414 0%, rgba(18, 20, 20, 0) 100%);
         }
+        .drop-zone {
+            border: 2px dashed #424a33;
+            transition: all 0.2s;
+        }
+        .drop-zone.drag-over {
+            border-color: #b1f800;
+            background: rgba(177, 248, 0, 0.05);
+            box-shadow: 0 0 20px rgba(177, 248, 0, 0.2);
+        }
     </style>
 <script id="tailwind-config">
         tailwind.config = {
@@ -134,7 +143,10 @@
 <button class="active:scale-95 transition-transform text-on-surface-variant hover:text-primary-fixed-dim transition-colors">
 <span class="material-symbols-outlined">menu</span>
 </button>
-<h1 class="font-headline-md text-headline-md font-extrabold tracking-tighter text-primary-fixed">BROTHER GREEN</h1>
+<h1 class="font-headline-md text-headline-md font-extrabold tracking-tighter text-primary-fixed">
+  <img id="header-logo" src="" alt="BROTHER GREEN" class="h-8 hidden"/>
+  <span id="header-logo-text">BROTHER GREEN</span>
+</h1>
 </div>
 <div class="flex items-center gap-6">
 <!-- Desktop Nav Cluster -->
@@ -279,6 +291,50 @@
 </div>
 </div>
 </section>
+<!-- Logo & Asset Upload -->
+<section class="px-margin-mobile md:px-margin-desktop py-16">
+  <div class="flex justify-between items-end mb-10">
+    <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase tracking-tighter">Assets</h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Logo Upload -->
+    <div class="bg-surface-container border border-outline-variant p-6">
+      <p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mb-4">Logo</p>
+      <div id="logo-drop-zone" class="drop-zone rounded p-8 flex flex-col items-center justify-center gap-4 cursor-pointer min-h-[200px]">
+        <div id="logo-preview-wrap" class="hidden flex flex-col items-center gap-4 w-full">
+          <img id="logo-preview" src="" alt="Logo Preview" class="max-h-32 object-contain"/>
+          <p id="logo-filename" class="text-on-surface-variant font-label-md text-label-md truncate max-w-full"></p>
+        </div>
+        <div id="logo-placeholder" class="flex flex-col items-center gap-3">
+          <span class="material-symbols-outlined text-primary-fixed" style="font-size:48px;">upload_file</span>
+          <p class="font-label-md text-label-md text-on-surface-variant text-center uppercase tracking-widest">로고 파일을 여기에 드래그하거나 클릭하여 업로드</p>
+          <p class="text-on-surface-variant text-sm">.png .jpg .svg .ai .pdf 지원</p>
+        </div>
+      </div>
+      <input id="logo-input" type="file" accept="image/*,.ai,.pdf,.svg" class="hidden"/>
+      <div class="flex gap-3 mt-4">
+        <button id="logo-upload-btn" class="flex-1 border-2 border-outline-variant py-3 font-label-md text-label-md uppercase hover:bg-primary-fixed hover:text-on-primary-fixed hover:border-primary-fixed transition-all active:scale-95">파일 선택</button>
+        <button id="logo-clear-btn" class="border-2 border-outline-variant px-4 py-3 font-label-md text-label-md uppercase hover:bg-surface-container-highest transition-all active:scale-95 hidden">
+          <span class="material-symbols-outlined text-sm">delete</span>
+        </button>
+      </div>
+    </div>
+    <!-- General Image Upload -->
+    <div class="bg-surface-container border border-outline-variant p-6">
+      <p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mb-4">Images</p>
+      <div id="img-drop-zone" class="drop-zone rounded p-8 flex flex-col items-center justify-center gap-4 cursor-pointer min-h-[200px]">
+        <div id="img-grid" class="hidden w-full grid grid-cols-3 gap-2"></div>
+        <div id="img-placeholder" class="flex flex-col items-center gap-3">
+          <span class="material-symbols-outlined text-on-surface-variant" style="font-size:48px;">add_photo_alternate</span>
+          <p class="font-label-md text-label-md text-on-surface-variant text-center uppercase tracking-widest">이미지를 드래그하거나 클릭하여 추가</p>
+          <p class="text-on-surface-variant text-sm">.png .jpg .gif .webp 지원</p>
+        </div>
+      </div>
+      <input id="img-input" type="file" accept="image/*" multiple class="hidden"/>
+      <button id="img-upload-btn" class="w-full mt-4 border-2 border-outline-variant py-3 font-label-md text-label-md uppercase hover:bg-primary-fixed hover:text-on-primary-fixed hover:border-primary-fixed transition-all active:scale-95">파일 선택</button>
+    </div>
+  </div>
+</section>
 </main>
 <!-- BottomNavBar -->
 <nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-2 pb-safe bg-surface-container-lowest border-t-2 border-outline-variant md:hidden">
@@ -312,7 +368,6 @@
                 });
             });
 
-            // Subtle parallax for hero text on scroll
             window.addEventListener('scroll', () => {
                 const scroll = window.pageYOffset;
                 const heroText = document.querySelector('h2');
@@ -320,6 +375,105 @@
                     heroText.style.transform = `translateY(${scroll * 0.1}px) skewX(-6deg)`;
                 }
             });
+
+            // ── Logo Upload ──
+            const logoDropZone = document.getElementById('logo-drop-zone');
+            const logoInput = document.getElementById('logo-input');
+            const logoPreviewWrap = document.getElementById('logo-preview-wrap');
+            const logoPreview = document.getElementById('logo-preview');
+            const logoFilename = document.getElementById('logo-filename');
+            const logoPlaceholder = document.getElementById('logo-placeholder');
+            const logoClearBtn = document.getElementById('logo-clear-btn');
+            const headerLogo = document.getElementById('header-logo');
+            const headerLogoText = document.getElementById('header-logo-text');
+
+            function applyLogo(dataUrl, name) {
+                logoPreview.src = dataUrl;
+                logoFilename.textContent = name;
+                logoPreviewWrap.classList.remove('hidden');
+                logoPlaceholder.classList.add('hidden');
+                logoClearBtn.classList.remove('hidden');
+                // Show in header
+                if (dataUrl.startsWith('data:image')) {
+                    headerLogo.src = dataUrl;
+                    headerLogo.classList.remove('hidden');
+                    headerLogoText.classList.add('hidden');
+                }
+                localStorage.setItem('bg_logo', dataUrl);
+                localStorage.setItem('bg_logo_name', name);
+            }
+
+            function clearLogo() {
+                logoPreview.src = '';
+                logoFilename.textContent = '';
+                logoPreviewWrap.classList.add('hidden');
+                logoPlaceholder.classList.remove('hidden');
+                logoClearBtn.classList.add('hidden');
+                headerLogo.src = '';
+                headerLogo.classList.add('hidden');
+                headerLogoText.classList.remove('hidden');
+                localStorage.removeItem('bg_logo');
+                localStorage.removeItem('bg_logo_name');
+            }
+
+            // Load saved logo
+            const savedLogo = localStorage.getItem('bg_logo');
+            if (savedLogo) applyLogo(savedLogo, localStorage.getItem('bg_logo_name') || 'logo');
+
+            logoDropZone.addEventListener('click', () => logoInput.click());
+            document.getElementById('logo-upload-btn').addEventListener('click', (e) => { e.stopPropagation(); logoInput.click(); });
+            logoClearBtn.addEventListener('click', (e) => { e.stopPropagation(); clearLogo(); });
+
+            logoInput.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
+                const reader = new FileReader();
+                reader.onload = (ev) => applyLogo(ev.target.result, file.name);
+                reader.readAsDataURL(file);
+            });
+
+            ['dragenter','dragover'].forEach(ev => logoDropZone.addEventListener(ev, (e) => { e.preventDefault(); logoDropZone.classList.add('drag-over'); }));
+            ['dragleave','drop'].forEach(ev => logoDropZone.addEventListener(ev, (e) => { e.preventDefault(); logoDropZone.classList.remove('drag-over'); }));
+            logoDropZone.addEventListener('drop', (e) => {
+                const file = e.dataTransfer.files[0];
+                if (!file) return;
+                const reader = new FileReader();
+                reader.onload = (ev) => applyLogo(ev.target.result, file.name);
+                reader.readAsDataURL(file);
+            });
+
+            // ── Image Upload ──
+            const imgDropZone = document.getElementById('img-drop-zone');
+            const imgInput = document.getElementById('img-input');
+            const imgGrid = document.getElementById('img-grid');
+            const imgPlaceholder = document.getElementById('img-placeholder');
+
+            function addImages(files) {
+                imgGrid.classList.remove('hidden');
+                imgPlaceholder.classList.add('hidden');
+                Array.from(files).forEach(file => {
+                    if (!file.type.startsWith('image/')) return;
+                    const reader = new FileReader();
+                    reader.onload = (ev) => {
+                        const div = document.createElement('div');
+                        div.className = 'relative aspect-square overflow-hidden bg-surface-container-high group';
+                        div.innerHTML = `<img src="${ev.target.result}" class="w-full h-full object-cover"/>
+                            <button class="absolute top-1 right-1 bg-background/80 p-1 opacity-0 group-hover:opacity-100 transition-opacity" onclick="this.parentElement.remove(); if(!document.querySelector('#img-grid div')){document.getElementById('img-grid').classList.add('hidden');document.getElementById('img-placeholder').classList.remove('hidden');}">
+                                <span class="material-symbols-outlined text-sm">close</span>
+                            </button>`;
+                        imgGrid.appendChild(div);
+                    };
+                    reader.readAsDataURL(file);
+                });
+            }
+
+            imgDropZone.addEventListener('click', () => imgInput.click());
+            document.getElementById('img-upload-btn').addEventListener('click', (e) => { e.stopPropagation(); imgInput.click(); });
+            imgInput.addEventListener('change', (e) => addImages(e.target.files));
+
+            ['dragenter','dragover'].forEach(ev => imgDropZone.addEventListener(ev, (e) => { e.preventDefault(); imgDropZone.classList.add('drag-over'); }));
+            ['dragleave','drop'].forEach(ev => imgDropZone.addEventListener(ev, (e) => { e.preventDefault(); imgDropZone.classList.remove('drag-over'); }));
+            imgDropZone.addEventListener('drop', (e) => { addImages(e.dataTransfer.files); });
         });
     </script>
 </body></html>
