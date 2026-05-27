@@ -145,9 +145,9 @@
 </button>
 <h1 class="font-headline-md text-headline-md font-extrabold tracking-tighter text-primary-fixed">
   <label for="header-logo-input" class="cursor-pointer group/logo flex items-center gap-2">
-    <img id="header-logo" src="" alt="BROTHER GREEN" class="h-10 hidden object-contain"/>
-    <span id="header-logo-text">BROTHER GREEN</span>
-    <span id="header-logo-edit" class="material-symbols-outlined text-base text-on-surface-variant opacity-0 group-hover/logo:opacity-100 transition-opacity hidden" title="로고 변경">edit</span>
+    <img id="header-logo" src="assets/logos/bg-blue.png" alt="BROTHER GREEN" class="h-10 object-contain"/>
+    <span id="header-logo-text" class="hidden">BROTHER GREEN</span>
+    <span id="header-logo-edit" class="material-symbols-outlined text-base text-on-surface-variant opacity-0 group-hover/logo:opacity-100 transition-opacity" title="로고 변경">edit</span>
   </label>
   <input id="header-logo-input" type="file" accept="image/*,.svg" class="hidden"/>
 </h1>
@@ -423,17 +423,18 @@
                 logoPreviewWrap.classList.add('hidden');
                 logoPlaceholder.classList.remove('hidden');
                 logoClearBtn.classList.add('hidden');
-                headerLogo.src = '';
-                headerLogo.classList.add('hidden');
-                headerLogoText.classList.remove('hidden');
-                headerLogoEdit.classList.add('hidden');
+                headerLogo.src = 'assets/logos/bg-blue.png';
+                headerLogo.classList.remove('hidden');
+                headerLogoText.classList.add('hidden');
                 localStorage.removeItem('bg_logo');
                 localStorage.removeItem('bg_logo_name');
             }
 
-            // Load saved logo
+            // Load saved logo (falls back to default bg-blue.png)
             const savedLogo = localStorage.getItem('bg_logo');
-            if (savedLogo) applyLogo(savedLogo, localStorage.getItem('bg_logo_name') || 'logo');
+            if (savedLogo) {
+                applyLogo(savedLogo, localStorage.getItem('bg_logo_name') || 'logo');
+            }
 
             logoDropZone.addEventListener('click', () => logoInput.click());
             document.getElementById('logo-upload-btn').addEventListener('click', (e) => { e.stopPropagation(); logoInput.click(); });
