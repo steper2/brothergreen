@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>BROTHER GREEN | Urban Dance Management</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Hanken+Grotesk:wght@400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&amp;family=Sora:wght@100..900&amp;display=swap" rel="stylesheet"/>
-<style>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>BROTHER GREEN | Urban Dance Management</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Hanken+Grotesk:wght@400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&amp;family=Sora:wght@100..900&amp;display=swap" rel="stylesheet">
+    <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
@@ -29,17 +29,8 @@
         .hero-gradient {
             background: linear-gradient(0deg, #121414 0%, rgba(18, 20, 20, 0) 100%);
         }
-        .drop-zone {
-            border: 2px dashed #424a33;
-            transition: all 0.2s;
-        }
-        .drop-zone.drag-over {
-            border-color: #b1f800;
-            background: rgba(177, 248, 0, 0.05);
-            box-shadow: 0 0 20px rgba(177, 248, 0, 0.2);
-        }
     </style>
-<script id="tailwind-config">
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -128,368 +119,203 @@
             },
         }
     </script>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
+</head>
 <body class="bg-background text-on-background font-body-md overflow-x-hidden selection:bg-primary-fixed selection:text-on-primary-fixed">
 <!-- Asphalt Texture Overlay -->
 <div class="fixed inset-0 pointer-events-none asphalt-texture z-[1]"></div>
 <!-- TopAppBar -->
 <header class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop h-16 z-50 bg-background fixed top-0 border-b-2 border-outline-variant">
-<div class="flex items-center gap-4">
-<button class="active:scale-95 transition-transform text-on-surface-variant hover:text-primary-fixed-dim transition-colors">
-<span class="material-symbols-outlined">menu</span>
-</button>
-<h1 class="font-headline-md text-headline-md font-extrabold tracking-tighter text-primary-fixed">
-  <label for="header-logo-input" class="cursor-pointer group/logo flex items-center gap-2">
-    <img id="header-logo" src="assets/logos/bg-blue.png" alt="BROTHER GREEN" class="h-10 object-contain"/>
-    <span id="header-logo-text" class="hidden">BROTHER GREEN</span>
-    <span id="header-logo-edit" class="material-symbols-outlined text-base text-on-surface-variant opacity-0 group-hover/logo:opacity-100 transition-opacity" title="로고 변경">edit</span>
-  </label>
-  <input id="header-logo-input" type="file" accept="image/*,.svg" class="hidden"/>
-</h1>
-</div>
-<div class="flex items-center gap-6">
-<!-- Desktop Nav Cluster -->
-<nav class="hidden md:flex items-center gap-8">
-<a class="font-label-md text-label-md text-primary-fixed active:scale-95 transition-transform" href="#">Home</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors active:scale-95 transition-transform" href="#">Events</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors active:scale-95 transition-transform" href="#">Team</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors active:scale-95 transition-transform" href="#">Profile</a>
-</nav>
-<button class="active:scale-95 transition-transform text-on-surface-variant hover:text-primary-fixed-dim transition-colors">
-<span class="material-symbols-outlined">search</span>
-</button>
-</div>
+    <div class="flex items-center gap-4">
+        <button class="active:scale-95 transition-transform text-on-surface-variant hover:text-primary-fixed-dim transition-colors">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkfXkpkfuTH5mscyGj8ko30cTV49ULjO8YctVAHFd8fKeC9iv8Y7pJbib-1_eNwzeorDaf_WxTQIc9UXQoey8AHmmhaZQwUNP4QkwticF7PK7yeBXKYGIeUoVcZkszsi6PFvFkobNbCNN5CYJvGpO5JgfUk1e2BEn13Z6NzpRadxRRjKEKzaPdbhUFTJ3tGDIK5I8y3zBNsTMraR1c5WpOsyh2YLUnvHYZHfucBNScW_JA890FaCe4xp3Ma2Kk3IkinT27wfp2rXY" alt="BROTHER GREEN" class="h-10 w-auto object-contain">
+    </div>
+    <div class="flex items-center gap-6">
+        <!-- Desktop Nav Cluster -->
+        <nav class="hidden md:flex items-center gap-8">
+            <a class="font-label-md text-label-md text-primary-fixed active:scale-95 transition-transform" href="#">Home</a>
+            <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors active:scale-95 transition-transform" href="#">Events</a>
+            <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors active:scale-95 transition-transform" href="#">Team</a>
+            <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors active:scale-95 transition-transform" href="#">Profile</a>
+        </nav>
+        <button class="active:scale-95 transition-transform text-on-surface-variant hover:text-primary-fixed-dim transition-colors">
+            <span class="material-symbols-outlined">search</span>
+        </button>
+    </div>
 </header>
 <main class="relative z-10 pt-16 pb-24 md:pb-0">
-<!-- Hero Section -->
-<section class="relative w-full h-[707px] overflow-hidden flex flex-col justify-end px-margin-mobile md:px-margin-desktop pb-16">
-<img alt="B-Boy performing dynamic freeze" class="absolute inset-0 w-full h-full object-cover grayscale brightness-50 contrast-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWOKp6QhI3e7WE68r1Mn8lAMrh3xBW4pttJ4c9zc1wOjvaalntRc1XuvJFl0OEphjlsn7XNYAUPJlqZawiMgiffGWTFca58ABIHfbnnu2F5D1V6lA1c6c1d45cVjTJMyAOULhWBfSHmQOtAGLOmzD6IfCfjkeEkCVGa1qPrv2MnRMJzBZzf5NJADGOMlKJvfsV_NDXOITAz7bmyB3wb1U2NS2hjV6-ITMZQQowkwx-oF3CWZsV_yeTdytY8rx0QTV--fT9L6z1dpA"/>
-<div class="absolute inset-0 hero-gradient"></div>
-<div class="relative z-20 space-y-6 max-w-4xl">
-<h2 class="font-display-lg text-[48px] md:text-display-lg leading-tight md:leading-none uppercase italic transform -skew-x-6">
-                    Beyond <br/> The <span class="text-primary-fixed text-glow">Street</span>
-</h2>
-<p class="font-body-lg text-body-lg text-secondary max-w-xl">
-                    Defining the next era of professional breakdance management. From street jams to global stadium stages.
-                </p>
-<div class="pt-4">
-<button class="bg-primary-fixed text-on-primary-fixed px-8 py-4 font-label-md text-label-md uppercase tracking-widest active:scale-95 transition-all neon-glow hover:bg-primary-fixed-dim">
-                        Explore Events
-                    </button>
-</div>
-</div>
-</section>
-<!-- Quick Stats Row -->
-<section class="px-margin-mobile md:px-margin-desktop py-12 -mt-12 relative z-30">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-1">
-<div class="bg-surface-container-high p-6 border-l-4 border-primary-fixed group hover:bg-surface-container-highest transition-colors">
-<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Upcoming Events</p>
-<h3 class="font-headline-lg text-headline-lg text-primary-fixed mt-2">12</h3>
-</div>
-<div class="bg-surface-container-high p-6 border-l-4 border-primary-fixed group hover:bg-surface-container-highest transition-colors">
-<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Active Projects</p>
-<h3 class="font-headline-lg text-headline-lg text-primary-fixed mt-2">05</h3>
-</div>
-<div class="bg-surface-container-high p-6 border-l-4 border-primary-fixed group hover:bg-surface-container-highest transition-colors">
-<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Team Ranking</p>
-<h3 class="font-headline-lg text-headline-lg text-primary-fixed mt-2">#01</h3>
-</div>
-</div>
-</section>
-<!-- Featured Festivals -->
-<section class="px-margin-mobile md:px-margin-desktop py-16">
-<div class="flex justify-between items-end mb-10">
-<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase tracking-tighter">Featured Festivals</h2>
-<a class="text-primary-fixed font-label-md text-label-md border-b border-primary-fixed pb-1" href="#">VIEW ALL</a>
-</div>
-<div class="flex overflow-x-auto gap-gutter pb-8 hide-scrollbar snap-x">
-<!-- Card 1 -->
-<div class="min-w-[300px] md:min-w-[400px] bg-surface-container border border-outline-variant hover:border-primary-fixed transition-all group snap-start">
-<div class="h-56 relative overflow-hidden">
-<img alt="Seoul Break Jam" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWKTtbgJiQ2qfcBbu5zp4w9TR4I3Ld_0KD1JjOo2NGuAKqAGlJzaj4D6NNgtiB_ILPLnPWbGj0DIEqjVNIRF6YXoDpAFr9fyb2vULMwC59urEyu8dZFAjXk2-1SsjvD2yaamupdMD2mvh813xx2ppzbEo8YH6HW16VI28ML3IFw_89tpwu-LGUabItSZxErdwbcsLOr_Qlc6OWV572AtBSkijajl_-np8VKVFvFQ_m95AkueRshMOC6Ks1vM7DGq7Jl8oS9SFQqcQ"/>
-<div class="absolute top-4 right-4 bg-primary-fixed text-on-primary-fixed px-3 py-1 font-label-md text-label-md uppercase">Live</div>
-</div>
-<div class="p-6">
-<p class="text-on-surface-variant font-label-md text-label-md mb-2">OCT 24, 2024 • SEOUL</p>
-<h4 class="font-headline-md text-headline-md mb-6 uppercase tracking-tight">Seoul Break Jam 2024</h4>
-<button class="w-full border-2 border-outline-variant py-3 font-label-md text-label-md uppercase hover:bg-primary-fixed hover:text-on-primary-fixed hover:border-primary-fixed transition-all active:scale-95">Join Event</button>
-</div>
-</div>
-<!-- Card 2 -->
-<div class="min-w-[300px] md:min-w-[400px] bg-surface-container border border-outline-variant hover:border-primary-fixed transition-all group snap-start">
-<div class="h-56 relative overflow-hidden">
-<img alt="Busan Street Vibes" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzipiAhW7j3xrArjRccnwJg7wQF8i6w4Wi8uHRedYRWh5iUb4iafbuZgTmDa5LP5CzRsrA6Ut98z6zxRZsEly6YFoZag1ayduAsdSe9vMwTMrFiVtwhk4JwGeLJfpUbtsuIOyPvDA8DJfPSlpbX81mwznq_FZ-SRCn6_Ri2q5G0rGrDbPXK8C0NYWM98z-Ps2BxffTMu8WIC6TJ1HqR6QS4XRSr6XREE-54yhI3iQB0TdzP9L8hFVTs1oyyTyo8k6hKIuVvS4PAR0"/>
-<div class="absolute top-4 right-4 bg-tertiary-container text-on-tertiary-container px-3 py-1 font-label-md text-label-md uppercase">Workshop</div>
-</div>
-<div class="p-6">
-<p class="text-on-surface-variant font-label-md text-label-md mb-2">NOV 12, 2024 • BUSAN</p>
-<h4 class="font-headline-md text-headline-md mb-6 uppercase tracking-tight">Busan Street Vibes</h4>
-<button class="w-full border-2 border-outline-variant py-3 font-label-md text-label-md uppercase hover:bg-primary-fixed hover:text-on-primary-fixed hover:border-primary-fixed transition-all active:scale-95">Join Event</button>
-</div>
-</div>
-<!-- Card 3 -->
-<div class="min-w-[300px] md:min-w-[400px] bg-surface-container border border-outline-variant hover:border-primary-fixed transition-all group snap-start">
-<div class="h-56 relative overflow-hidden">
-<img alt="Concrete Battle" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQeaXW2gV6d__Fs50aC11_MrYGZpuLQ2WDWljlE1HAG0xtesYjC9yIG9-5POtEtuEfiJqc_PeD55u0bY2oMO2NptAx98I78vez3HEqr7W-7IzkPdzM6FJsYum5pK3HiWkBSlznNTGkQx8vpP1nRHA6ILF4onkWnnMzvnqqBWdx5SLN70G1bWK8apFp7vRnI6EsJAPP_Pqi3LJrsOkRulXuHShEx-dZKU3MDn2y65TcicFLWCnGh6MKa7xkF9aAvBA1DC1zqUfti6Q"/>
-</div>
-<div class="p-6">
-<p class="text-on-surface-variant font-label-md text-label-md mb-2">DEC 05, 2024 • TOKYO</p>
-<h4 class="font-headline-md text-headline-md mb-6 uppercase tracking-tight">Concrete Battle 11</h4>
-<button class="w-full border-2 border-outline-variant py-3 font-label-md text-label-md uppercase hover:bg-primary-fixed hover:text-on-primary-fixed hover:border-primary-fixed transition-all active:scale-95">Join Event</button>
-</div>
-</div>
-</div>
-</section>
-<!-- Our B-Boy Team -->
-<section class="px-margin-mobile md:px-margin-desktop py-16 bg-surface-container-lowest">
-<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
-<div>
-<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase tracking-tighter">The Vanguard</h2>
-<p class="text-on-surface-variant max-w-lg mt-4">Meet the elite athletes rewriting the rules of motion. Our roster represents the absolute pinnacle of competitive breakdancing.</p>
-</div>
-<button class="bg-primary-fixed text-on-primary-fixed px-10 py-4 font-label-md text-label-md uppercase tracking-widest active:scale-95 transition-all neon-glow flex items-center gap-2">
-<span class="material-symbols-outlined">groups</span> Manage Team
+    <!-- Hero Section -->
+    <section class="relative w-full h-[80vh] overflow-hidden flex flex-col justify-end px-margin-mobile md:px-margin-desktop pb-16">
+        <img alt="B-Boy performing dynamic freeze" class="absolute inset-0 w-full h-full object-cover grayscale brightness-50 contrast-125" data-alt="A dynamic action shot of a professional B-Boy captured mid-freeze on a gritty urban concrete stage. Dramatic low-angle perspective with high-contrast cinematic lighting that highlights muscle definition and street fashion. The background is a dark, atmospheric city alley with faint neon green reflections on wet pavement. The overall mood is energetic, rebellious, and premium, utilizing a dark palette with electric acid green highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWOKp6QhI3e7WE68r1Mn8lAMrh3xBW4pttJ4c9zc1wOjvaalntRc1XuvJFl0OEphjlsn7XNYAUPJlqZawiMgiffGWTFca58ABIHfbnnu2F5D1V6lA1c6c1d45cVjTJMyAOULhWBfSHmQOtAGLOmzD6IfCfjkeEkCVGa1qPrv2MnRMJzBZzf5NJADGOMlKJvfsV_NDXOITAz7bmyB3wb1U2NS2hjV6-ITMZQQowkwx-oF3CWZsV_yeTdytY8rx0QTV--fT9L6z1dpA">
+        <div class="absolute inset-0 hero-gradient"></div>
+        <div class="relative z-20 space-y-6 max-w-4xl">
+            <h2 class="font-display-lg text-[48px] md:text-display-lg leading-tight md:leading-none uppercase italic transform -skew-x-6">
+                Beyond <br> The <span class="text-primary-fixed text-glow">Street</span>
+            </h2>
+            <p class="font-body-lg text-body-lg text-secondary max-w-xl">
+                Defining the next era of professional breakdance management. From street jams to global stadium stages.
+            </p>
+            <div class="pt-4">
+                <button class="bg-primary-fixed text-on-primary-fixed px-8 py-4 font-label-md text-label-md uppercase tracking-widest active:scale-95 transition-all neon-glow hover:bg-primary-fixed-dim">
+                    Explore Events
                 </button>
-</div>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-<!-- Team Member 1 -->
-<div class="group relative aspect-[3/4] overflow-hidden">
-<img alt="Team Lead" class="w-full h-full object-cover grayscale group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbuxAw-M8RnUHlq9ZbetDMCaNj_tNGatRVGtuQ4g_HanrRUgtX_VIUXIkXCCIepiBEV44bBPJBEt43fiJcVgc8rYAFpCy5RHftNnySSpsKEPM8g0UWqMnUP3PIjQa1frMk-ttnWsVQTLCCB4WuRkZrDdYEigDt80A2s2zdVMGqq4k0I7OesgScTDAysFncvVmkclQhGMzkTsxt2_V7LQAbjMJplWuAbCkOU5zn-FBXYywqhkeK1mGj4pRq0KUSjRShR3Z4R47xV4o"/>
-<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
-<div class="absolute bottom-4 left-4 right-4">
-<h5 class="font-headline-md text-[20px] uppercase text-primary-fixed leading-none">Viper</h5>
-<p class="text-on-surface-variant font-label-md text-[12px] uppercase mt-1">Power Move Specialist</p>
-</div>
-</div>
-<!-- Team Member 2 -->
-<div class="group relative aspect-[3/4] overflow-hidden">
-<img alt="Team Member" class="w-full h-full object-cover grayscale group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNNBdBvfRBRFsvvYCmtSdqevno38WZRGCpy5JHuOPC3795tHnFA7nL4Nu2cw0OuQEghKIP2kQzQYoes5k6XfhjCBYivXmDvJ6gBLViMQozGd28TCSagoVPxQpUZIuY5hW9kHq6scWwVJzh2a4lKZuWhSRAHf7HdVlUbp-hXl1-EaDqIuhAhd8cSpAGQTlILFuv7eLpLOAQmEU59MW4xt2TPaKloj69_Q2qV685tm_PmeFF6b3TqneKtbRwhVckGEZg-6RTXCcPCk0"/>
-<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
-<div class="absolute bottom-4 left-4 right-4">
-<h5 class="font-headline-md text-[20px] uppercase text-primary-fixed leading-none">Ghost</h5>
-<p class="text-on-surface-variant font-label-md text-[12px] uppercase mt-1">Style Maestro</p>
-</div>
-</div>
-<!-- Team Member 3 -->
-<div class="group relative aspect-[3/4] overflow-hidden">
-<img alt="Team Member" class="w-full h-full object-cover grayscale group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbNKNdtqKzNUUqfeJxVPknmtCqPHfsqJWX05cEjqbEodVV-iR0u_4SjnVnk1pPqeEg6ZLn4ofztATGTP-g4H5tgcvU5UATHCsNPcfmXf_agnDKG5c2N3yJRxU3GXgBi7i-E7oRqFyA0htJCqBj89YQc6sg3Cpi2rKHNiQ6gAgpqjK783FqVAz_Smi-xQBhb7Umj2CioiHxlyq-6r6Ix7qcvLcKkJO3iY7_Y0Ej9LUMMjH4fXU_3xFSEZbCqmCihBfuBJifEJmgvR4"/>
-<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
-<div class="absolute bottom-4 left-4 right-4">
-<h5 class="font-headline-md text-[20px] uppercase text-primary-fixed leading-none">Static</h5>
-<p class="text-on-surface-variant font-label-md text-[12px] uppercase mt-1">Foundation King</p>
-</div>
-</div>
-<!-- Team Member 4 -->
-<div class="group relative aspect-[3/4] overflow-hidden">
-<img alt="Team Member" class="w-full h-full object-cover grayscale group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_mjOzku4IqxATRVr1wkhOFvRHdscoKFU2n5KWPedGPqQcRC9Y6WSsZ3ZDj2s7j4f6U6qxHBtDN8ndZuyYePEwaN5BXLZNE2fGm8Uaz1g35Mt5oO8lbO_qMvZZLCNrhUSdcUEyvsAKMqIdt9uyue2Pq2U8TrsZIfCdad3leAdOZMuBPfqZbQQ3Htp_klxY9uzg-B6XTOOUVHMS39YJTKIOxvCeKgM4kps2YJTKIOxvCeKgM4kps2WP2YcVv1M3xLYyO-gL5UmChN7ISQd0jkOI6yo5o_1zE"/>
-<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
-<div class="absolute bottom-4 left-4 right-4">
-<h5 class="font-headline-md text-[20px] uppercase text-primary-fixed leading-none">Rhythm</h5>
-<p class="text-on-surface-variant font-label-md text-[12px] uppercase mt-1">Footwork Specialist</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Logo & Asset Upload -->
-<section class="px-margin-mobile md:px-margin-desktop py-16">
-  <div class="flex justify-between items-end mb-10">
-    <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase tracking-tighter">Assets</h2>
-  </div>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    <!-- Logo Upload -->
-    <div class="bg-surface-container border border-outline-variant p-6">
-      <p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mb-4">Logo</p>
-      <div id="logo-drop-zone" class="drop-zone rounded p-8 flex flex-col items-center justify-center gap-4 cursor-pointer min-h-[200px]">
-        <div id="logo-preview-wrap" class="hidden flex flex-col items-center gap-4 w-full">
-          <img id="logo-preview" src="" alt="Logo Preview" class="max-h-32 object-contain"/>
-          <p id="logo-filename" class="text-on-surface-variant font-label-md text-label-md truncate max-w-full"></p>
+            </div>
         </div>
-        <div id="logo-placeholder" class="flex flex-col items-center gap-3">
-          <span class="material-symbols-outlined text-primary-fixed" style="font-size:48px;">upload_file</span>
-          <p class="font-label-md text-label-md text-on-surface-variant text-center uppercase tracking-widest">로고 파일을 여기에 드래그하거나 클릭하여 업로드</p>
-          <p class="text-on-surface-variant text-sm">.png .jpg .svg .ai .pdf 지원</p>
+    </section>
+    <!-- Quick Stats Row -->
+    <section class="px-margin-mobile md:px-margin-desktop py-12 -mt-12 relative z-30">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-1">
+            <div class="bg-surface-container-high p-6 border-l-4 border-primary-fixed group hover:bg-surface-container-highest transition-colors" style="transform: translateY(0px);">
+                <p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Upcoming Events</p>
+                <h3 class="font-headline-lg text-headline-lg text-primary-fixed mt-2">12</h3>
+            </div>
+            <div class="bg-surface-container-high p-6 border-l-4 border-primary-fixed group hover:bg-surface-container-highest transition-colors" style="transform: translateY(0px);">
+                <p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Active Projects</p>
+                <h3 class="font-headline-lg text-headline-lg text-primary-fixed mt-2">05</h3>
+            </div>
+            <div class="bg-surface-container-high p-6 border-l-4 border-primary-fixed group hover:bg-surface-container-highest transition-colors" style="transform: translateY(0px);">
+                <p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Team Ranking</p>
+                <h3 class="font-headline-lg text-headline-lg text-primary-fixed mt-2">#01</h3>
+            </div>
         </div>
-      </div>
-      <input id="logo-input" type="file" accept="image/*,.ai,.pdf,.svg" class="hidden"/>
-      <div class="flex gap-3 mt-4">
-        <button id="logo-upload-btn" class="flex-1 border-2 border-outline-variant py-3 font-label-md text-label-md uppercase hover:bg-primary-fixed hover:text-on-primary-fixed hover:border-primary-fixed transition-all active:scale-95">파일 선택</button>
-        <button id="logo-clear-btn" class="border-2 border-outline-variant px-4 py-3 font-label-md text-label-md uppercase hover:bg-surface-container-highest transition-all active:scale-95 hidden">
-          <span class="material-symbols-outlined text-sm">delete</span>
-        </button>
-      </div>
-    </div>
-    <!-- General Image Upload -->
-    <div class="bg-surface-container border border-outline-variant p-6">
-      <p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mb-4">Images</p>
-      <div id="img-drop-zone" class="drop-zone rounded p-8 flex flex-col items-center justify-center gap-4 cursor-pointer min-h-[200px]">
-        <div id="img-grid" class="hidden w-full grid grid-cols-3 gap-2"></div>
-        <div id="img-placeholder" class="flex flex-col items-center gap-3">
-          <span class="material-symbols-outlined text-on-surface-variant" style="font-size:48px;">add_photo_alternate</span>
-          <p class="font-label-md text-label-md text-on-surface-variant text-center uppercase tracking-widest">이미지를 드래그하거나 클릭하여 추가</p>
-          <p class="text-on-surface-variant text-sm">.png .jpg .gif .webp 지원</p>
+    </section>
+    <!-- Featured Festivals -->
+    <section class="px-margin-mobile md:px-margin-desktop py-16">
+        <div class="flex justify-between items-end mb-10">
+            <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase tracking-tighter">Featured Festivals</h2>
+            <a class="text-primary-fixed font-label-md text-label-md border-b border-primary-fixed pb-1" href="#">VIEW ALL</a>
         </div>
-      </div>
-      <input id="img-input" type="file" accept="image/*" multiple class="hidden"/>
-      <button id="img-upload-btn" class="w-full mt-4 border-2 border-outline-variant py-3 font-label-md text-label-md uppercase hover:bg-primary-fixed hover:text-on-primary-fixed hover:border-primary-fixed transition-all active:scale-95">파일 선택</button>
-    </div>
-  </div>
-</section>
+        <div class="flex overflow-x-auto gap-gutter pb-8 hide-scrollbar snap-x">
+            <!-- Card 1 -->
+            <div class="min-w-[300px] md:min-w-[400px] bg-surface-container border border-outline-variant hover:border-primary-fixed transition-all group snap-start" style="transform: translateY(0px);">
+                <div class="h-56 relative overflow-hidden">
+                    <img alt="Seoul Break Jam" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A high-energy photograph of a crowded outdoor street dance festival in the neon-lit heart of Seoul at night. The foreground shows a silhouette of a breakdancer against a wall of brilliant LED screens and urban architecture. The lighting is dominated by deep blues and vibrant acid greens, creating a hyper-modern and electric atmosphere. Gritty concrete textures and high contrast define the aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWKTtbgJiQ2qfcBbu5zp4w9TR4I3Ld_0KD1JjOo2NGuAKqAGlJzaj4D6NNgtiB_ILPLnPWbGj0DIEqjVNIRF6YXoDpAFr9fyb2vULMwC59urEyu8dZFAjXk2-1SsjvD2yaamupdMD2mvh813xx2ppzbEo8YH6HW16VI28ML3IFw_89tpwu-LGUabItSZxErdwbcsLOr_Qlc6OWV572AtBSkijajl_-np8VKVFvFQ_m95AkueRshMOC6Ks1vM7DGq7Jl8oS9SFQqcQ">
+                    <div class="absolute top-4 right-4 bg-primary-fixed text-on-primary-fixed px-3 py-1 font-label-md text-label-md uppercase">Live</div>
+                </div>
+                <div class="p-6">
+                    <p class="text-on-surface-variant font-label-md text-label-md mb-2">OCT 24, 2024 • SEOUL</p>
+                    <h4 class="font-headline-md text-headline-md mb-6 uppercase tracking-tight">Seoul Break Jam 2024</h4>
+                    <button class="w-full border-2 border-outline-variant py-3 font-label-md text-label-md uppercase hover:bg-primary-fixed hover:text-on-primary-fixed hover:border-primary-fixed transition-all active:scale-95">Join Event</button>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="min-w-[300px] md:min-w-[400px] bg-surface-container border border-outline-variant hover:border-primary-fixed transition-all group snap-start" style="transform: translateY(0px);">
+                <div class="h-56 relative overflow-hidden">
+                    <img alt="Busan Street Vibes" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A gritty architectural shot of a Busan warehouse converted into a street dance arena. Rays of dust-filled light cut through the dark industrial space, illuminating a wooden dance floor. The color palette features heavy blacks, raw metal textures, and stark white highlights with acid green neon signs in the background. The mood is raw, professional, and authentic to urban culture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzipiAhW7j3xrArjRccnwJg7wQF8i6w4Wi8uHRedYRWh5iUb4iafbuZgTmDa5LP5CzRsrA6Ut98z6zxRZsEly6YFoZag1ayduAsdSe9vMwTMrFiVtwhk4JwGeLJfpUbtsuIOyPvDA8DJfPSlpbX81mwznq_FZ-SRCn6_Ri2q5G0rGrDbPXK8C0NYWM98z-Ps2BxffTMu8WIC6TJ1HqR6QS4XRSr6XREE-54yhI3iQB0TdzP9L8hFVTs1oyyTyo8k6hKIuVvS4PAR0">
+                    <div class="absolute top-4 right-4 bg-tertiary-container text-on-tertiary-container px-3 py-1 font-label-md text-label-md uppercase">Workshop</div>
+                </div>
+                <div class="p-6">
+                    <p class="text-on-surface-variant font-label-md text-label-md mb-2">NOV 12, 2024 • BUSAN</p>
+                    <h4 class="font-headline-md text-headline-md mb-6 uppercase tracking-tight">Busan Street Vibes</h4>
+                    <button class="w-full border-2 border-outline-variant py-3 font-label-md text-label-md uppercase hover:bg-primary-fixed hover:text-on-primary-fixed hover:border-primary-fixed transition-all active:scale-95">Join Event</button>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="min-w-[300px] md:min-w-[400px] bg-surface-container border border-outline-variant hover:border-primary-fixed transition-all group snap-start">
+                <div class="h-56 relative overflow-hidden">
+                    <img alt="Concrete Battle" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Close-up shot of scuffed sneakers and a dancer's hand touching the floor during a high-stakes competition. The background is blurred street art and urban bystanders. Intense lighting focus on the dancer's movement. Colors are deep charcoals, concrete grays, and electric purple accents. The photography style is sharp, gritty, and fast-paced." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQeaXW2gV6d__Fs50aC11_MrYGZpuLQ2WDWljlE1HAG0xtesYjC9yIG9-5POtEtuEfiJqc_PeD55u0bY2oMO2NptAx98I78vez3HEqr7W-7IzkPdzM6FJsYum5pK3HiWkBSlznNTGkQx8vpP1nRHA6ILF4onkWnnMzvnqqBWdx5SLN70G1bWK8apFp7vRnI6EsJAPP_Pqi3LJrsOkRulXuHShEx-dZKU3MDn2y65TcicFLWCnGh6MKa7xkF9aAvBA1DC1zqUfti6Q">
+                </div>
+                <div class="p-6">
+                    <p class="text-on-surface-variant font-label-md text-label-md mb-2">DEC 05, 2024 • TOKYO</p>
+                    <h4 class="font-headline-md text-headline-md mb-6 uppercase tracking-tight">Concrete Battle 11</h4>
+                    <button class="w-full border-2 border-outline-variant py-3 font-label-md text-label-md uppercase hover:bg-primary-fixed hover:text-on-primary-fixed hover:border-primary-fixed transition-all active:scale-95">Join Event</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Our B-Boy Team -->
+    <section class="px-margin-mobile md:px-margin-desktop py-16 bg-surface-container-lowest">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
+            <div>
+                <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase tracking-tighter">The Vanguard</h2>
+                <p class="text-on-surface-variant max-w-lg mt-4">Meet the elite athletes rewriting the rules of motion. Our roster represents the absolute pinnacle of competitive breakdancing.</p>
+            </div>
+            <button class="bg-primary-fixed text-on-primary-fixed px-10 py-4 font-label-md text-label-md uppercase tracking-widest active:scale-95 transition-all neon-glow flex items-center gap-2">
+                <span class="material-symbols-outlined">groups</span> Manage Team
+            </button>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <!-- Team Member 1 -->
+            <div class="group relative aspect-[3/4] overflow-hidden">
+                <img alt="Team Lead" class="w-full h-full object-cover grayscale group-hover:scale-110 transition-transform duration-700" data-alt="A portrait of a male breakdancer in urban streetwear, wearing a hoodie and a beanie, posing confidently against a backdrop of a weathered brick wall with subtle graffiti. The lighting is dramatic and moody, with a strong rim light in acid green. The overall aesthetic is gritty, high-contrast, and professional, reflecting an urban management brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbuxAw-M8RnUHlq9ZbetDMCaNj_tNGatRVGtuQ4g_HanrRUgtX_VIUXIkXCCIepiBEV44bBPJBEt43fiJcVgc8rYAFpCy5RHftNnySSpsKEPM8g0UWqMnUP3PIjQa1frMk-ttnWsVQTLCCB4WuRkZrDdYEigDt80A2s2zdVMGqq4k0I7OesgScTDAysFncvVmkclQhGMzkTsxt2_V7LQAbjMJplWuAbCkOU5zn-FBXYywqhkeK1mGj4pRq0KUSjRShR3Z4R47xV4o">
+                <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+                <div class="absolute bottom-4 left-4 right-4">
+                    <h5 class="font-headline-md text-[20px] uppercase text-primary-fixed leading-none">Viper</h5>
+                    <p class="text-on-surface-variant font-label-md text-[12px] uppercase mt-1">Power Move Specialist</p>
+                </div>
+            </div>
+            <!-- Team Member 2 -->
+            <div class="group relative aspect-[3/4] overflow-hidden">
+                <img alt="Team Member" class="w-full h-full object-cover grayscale group-hover:scale-110 transition-transform duration-700" data-alt="Full body shot of a dancer in a mid-air dynamic pose, suspended in a dark studio space with intentional light leaks in acid green and neon purple. High-speed photography captures every detail of the movement and texture of the streetwear. The background is a dark, textured asphalt surface. Highly polished, high-energy professional photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNNBdBvfRBRFsvvYCmtSdqevno38WZRGCpy5JHuOPC3795tHnFA7nL4Nu2cw0OuQEghKIP2kQzQYoes5k6XfhjCBYivXmDvJ6gBLViMQozGd28TCSagoVPxQpUZIuY5hW9kHq6scWwVJzh2a4lKZuWhSRAHf7HdVlUbp-hXl1-EaDqIuhAhd8cSpAGQTlILFuv7eLpLOAQmEU59MW4xt2TPaKloj69_Q2qV685tm_PmeFF6b3TqneKtbRwhVckGEZg-6RTXCcPCk0">
+                <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+                <div class="absolute bottom-4 left-4 right-4">
+                    <h5 class="font-headline-md text-[20px] uppercase text-primary-fixed leading-none">Ghost</h5>
+                    <p class="text-on-surface-variant font-label-md text-[12px] uppercase mt-1">Style Maestro</p>
+                </div>
+            </div>
+            <!-- Team Member 3 -->
+            <div class="group relative aspect-[3/4] overflow-hidden">
+                <img alt="Team Member" class="w-full h-full object-cover grayscale group-hover:scale-110 transition-transform duration-700" data-alt="Professional dancer portrait featuring high-fashion urban wear and a defiant expression. The lighting is harsh and direct, creating a brutalist, high-contrast aesthetic. Accents of electric purple light the edges. Dark charcoal and black environment with subtle noise and concrete textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbNKNdtqKzNUUqfeJxVPknmtCqPHfsqJWX05cEjqbEodVV-iR0u_4SjnVnk1pPqeEg6ZLn4ofztATGTP-g4H5tgcvU5UATHCsNPcfmXf_agnDKG5c2N3yJRxU3GXgBi7i-E7oRqFyA0htJCqBj89YQc6sg3Cpi2rKHNiQ6gAgpqjK783FqVAz_Smi-xQBhb7Umj2CioiHxlyq-6r6Ix7qcvLcKkJO3iY7_Y0Ej9LUMMjH4fXU_3xFSEZbCqmCihBfuBJifEJmgvR4">
+                <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+                <div class="absolute bottom-4 left-4 right-4">
+                    <h5 class="font-headline-md text-[20px] uppercase text-primary-fixed leading-none">Static</h5>
+                    <p class="text-on-surface-variant font-label-md text-[12px] uppercase mt-1">Foundation King</p>
+                </div>
+            </div>
+            <!-- Team Member 4 -->
+            <div class="group relative aspect-[3/4] overflow-hidden">
+                <img alt="Team Member" class="w-full h-full object-cover grayscale group-hover:scale-110 transition-transform duration-700" data-alt="Action shot of a breakdancer doing a headspin, captured with a slow shutter speed to show motion blur on the limbs while keeping the face in sharp focus. Cinematic dark urban environment with puddles reflecting neon green lights. High contrast, gritty, and energetic urban professional aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_mjOzku4IqxATRVr1wkhOFvRHdscoKFU2n5KWPedGPqQcRC9Y6WSsZ3ZDj2s7j4f6U6qxHBtDN8ndZuyYePEwaN5BXLZNE2fGm8Uaz1g35Mt5oO8lbO_qMvZZLCNrhUSdcUEyvsAKMqIdt9uyue2Pq2U8TrsZIfCdad3leAdOZMuBPfqZbQQ3Htp_klxY9uzg-B6XTOOUVHMS39YJTKIOxvCeKgM4kps2WP2YcVv1M3xLYyO-gL5UmChN7ISQd0jkOI6yo5o_1zE">
+                <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-90 group-hover:opacity-100 transition-opacity"></div>
+                <div class="absolute bottom-4 left-4 right-4">
+                    <h5 class="font-headline-md text-[20px] uppercase text-primary-fixed leading-none">Rhythm</h5>
+                    <p class="text-on-surface-variant font-label-md text-[12px] uppercase mt-1">Footwork Specialist</p>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
 <!-- BottomNavBar -->
 <nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-2 pb-safe bg-surface-container-lowest border-t-2 border-outline-variant md:hidden">
-<a class="flex flex-col items-center justify-center bg-primary-fixed text-on-primary-fixed rounded-none px-4 py-1 active:scale-95 transition-transform" href="#">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
-<span class="font-label-md text-label-md">Home</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high px-4 py-1 active:scale-95 transition-transform" href="#">
-<span class="material-symbols-outlined">event</span>
-<span class="font-label-md text-label-md">Events</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high px-4 py-1 active:scale-95 transition-transform" href="#">
-<span class="material-symbols-outlined">groups</span>
-<span class="font-label-md text-label-md">Team</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high px-4 py-1 active:scale-95 transition-transform" href="#">
-<span class="material-symbols-outlined">person</span>
-<span class="font-label-md text-label-md">Profile</span>
-</a>
+    <a class="flex flex-col items-center justify-center bg-primary-fixed text-on-primary-fixed rounded-none px-4 py-1 active:scale-95 transition-transform" href="#">
+        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+        <span class="font-label-md text-label-md">Home</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high px-4 py-1 active:scale-95 transition-transform" href="#">
+        <span class="material-symbols-outlined">event</span>
+        <span class="font-label-md text-label-md">Events</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high px-4 py-1 active:scale-95 transition-transform" href="#">
+        <span class="material-symbols-outlined">groups</span>
+        <span class="font-label-md text-label-md">Team</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high px-4 py-1 active:scale-95 transition-transform" href="#">
+        <span class="material-symbols-outlined">person</span>
+        <span class="font-label-md text-label-md">Profile</span>
+    </a>
 </nav>
 <!-- Micro-interactions Script -->
 <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const cards = document.querySelectorAll('.group');
-            cards.forEach(card => {
-                card.addEventListener('mouseenter', () => {
-                    card.style.transform = 'translateY(-4px)';
-                });
-                card.addEventListener('mouseleave', () => {
-                    card.style.transform = 'translateY(0)';
-                });
+    document.addEventListener('DOMContentLoaded', () => {
+        const cards = document.querySelectorAll('.group');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-4px)';
             });
-
-            window.addEventListener('scroll', () => {
-                const scroll = window.pageYOffset;
-                const heroText = document.querySelector('h2');
-                if (heroText) {
-                    heroText.style.transform = `translateY(${scroll * 0.1}px) skewX(-6deg)`;
-                }
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
             });
-
-            // ── Logo Upload ──
-            const logoDropZone = document.getElementById('logo-drop-zone');
-            const logoInput = document.getElementById('logo-input');
-            const logoPreviewWrap = document.getElementById('logo-preview-wrap');
-            const logoPreview = document.getElementById('logo-preview');
-            const logoFilename = document.getElementById('logo-filename');
-            const logoPlaceholder = document.getElementById('logo-placeholder');
-            const logoClearBtn = document.getElementById('logo-clear-btn');
-            const headerLogo = document.getElementById('header-logo');
-            const headerLogoText = document.getElementById('header-logo-text');
-
-            const headerLogoInput = document.getElementById('header-logo-input');
-            const headerLogoEdit = document.getElementById('header-logo-edit');
-
-            function applyLogo(dataUrl, name) {
-                logoPreview.src = dataUrl;
-                logoFilename.textContent = name;
-                logoPreviewWrap.classList.remove('hidden');
-                logoPlaceholder.classList.add('hidden');
-                logoClearBtn.classList.remove('hidden');
-                // Show in header
-                headerLogo.src = dataUrl;
-                headerLogo.classList.remove('hidden');
-                headerLogoText.classList.add('hidden');
-                headerLogoEdit.classList.remove('hidden');
-                localStorage.setItem('bg_logo', dataUrl);
-                localStorage.setItem('bg_logo_name', name);
-            }
-
-            headerLogoInput.addEventListener('change', (e) => {
-                const file = e.target.files[0];
-                if (!file) return;
-                const reader = new FileReader();
-                reader.onload = (ev) => applyLogo(ev.target.result, file.name);
-                reader.readAsDataURL(file);
-            });
-
-            function clearLogo() {
-                logoPreview.src = '';
-                logoFilename.textContent = '';
-                logoPreviewWrap.classList.add('hidden');
-                logoPlaceholder.classList.remove('hidden');
-                logoClearBtn.classList.add('hidden');
-                headerLogo.src = 'assets/logos/bg-blue.png';
-                headerLogo.classList.remove('hidden');
-                headerLogoText.classList.add('hidden');
-                localStorage.removeItem('bg_logo');
-                localStorage.removeItem('bg_logo_name');
-            }
-
-            // Load saved logo (falls back to default bg-blue.png)
-            const savedLogo = localStorage.getItem('bg_logo');
-            if (savedLogo) {
-                applyLogo(savedLogo, localStorage.getItem('bg_logo_name') || 'logo');
-            }
-
-            logoDropZone.addEventListener('click', () => logoInput.click());
-            document.getElementById('logo-upload-btn').addEventListener('click', (e) => { e.stopPropagation(); logoInput.click(); });
-            logoClearBtn.addEventListener('click', (e) => { e.stopPropagation(); clearLogo(); });
-
-            logoInput.addEventListener('change', (e) => {
-                const file = e.target.files[0];
-                if (!file) return;
-                const reader = new FileReader();
-                reader.onload = (ev) => applyLogo(ev.target.result, file.name);
-                reader.readAsDataURL(file);
-            });
-
-            ['dragenter','dragover'].forEach(ev => logoDropZone.addEventListener(ev, (e) => { e.preventDefault(); logoDropZone.classList.add('drag-over'); }));
-            ['dragleave','drop'].forEach(ev => logoDropZone.addEventListener(ev, (e) => { e.preventDefault(); logoDropZone.classList.remove('drag-over'); }));
-            logoDropZone.addEventListener('drop', (e) => {
-                const file = e.dataTransfer.files[0];
-                if (!file) return;
-                const reader = new FileReader();
-                reader.onload = (ev) => applyLogo(ev.target.result, file.name);
-                reader.readAsDataURL(file);
-            });
-
-            // ── Image Upload ──
-            const imgDropZone = document.getElementById('img-drop-zone');
-            const imgInput = document.getElementById('img-input');
-            const imgGrid = document.getElementById('img-grid');
-            const imgPlaceholder = document.getElementById('img-placeholder');
-
-            function addImages(files) {
-                imgGrid.classList.remove('hidden');
-                imgPlaceholder.classList.add('hidden');
-                Array.from(files).forEach(file => {
-                    if (!file.type.startsWith('image/')) return;
-                    const reader = new FileReader();
-                    reader.onload = (ev) => {
-                        const div = document.createElement('div');
-                        div.className = 'relative aspect-square overflow-hidden bg-surface-container-high group';
-                        div.innerHTML = `<img src="${ev.target.result}" class="w-full h-full object-cover"/>
-                            <button class="absolute top-1 right-1 bg-background/80 p-1 opacity-0 group-hover:opacity-100 transition-opacity" onclick="this.parentElement.remove(); if(!document.querySelector('#img-grid div')){document.getElementById('img-grid').classList.add('hidden');document.getElementById('img-placeholder').classList.remove('hidden');}">
-                                <span class="material-symbols-outlined text-sm">close</span>
-                            </button>`;
-                        imgGrid.appendChild(div);
-                    };
-                    reader.readAsDataURL(file);
-                });
-            }
-
-            imgDropZone.addEventListener('click', () => imgInput.click());
-            document.getElementById('img-upload-btn').addEventListener('click', (e) => { e.stopPropagation(); imgInput.click(); });
-            imgInput.addEventListener('change', (e) => addImages(e.target.files));
-
-            ['dragenter','dragover'].forEach(ev => imgDropZone.addEventListener(ev, (e) => { e.preventDefault(); imgDropZone.classList.add('drag-over'); }));
-            ['dragleave','drop'].forEach(ev => imgDropZone.addEventListener(ev, (e) => { e.preventDefault(); imgDropZone.classList.remove('drag-over'); }));
-            imgDropZone.addEventListener('drop', (e) => { addImages(e.dataTransfer.files); });
         });
-    </script>
-</body></html>
+        
+        // Subtle parallax for hero text on scroll
+        window.addEventListener('scroll', () => {
+            const scroll = window.pageYOffset;
+            const heroText = document.querySelector('h2');
+            if (heroText) {
+                heroText.style.transform = `translateY(${scroll * 0.1}px) skewX(-6deg)`;
+            }
+        });
+    });
+</script>
+</body>
+</html>
