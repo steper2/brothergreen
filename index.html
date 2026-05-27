@@ -144,8 +144,12 @@
 <span class="material-symbols-outlined">menu</span>
 </button>
 <h1 class="font-headline-md text-headline-md font-extrabold tracking-tighter text-primary-fixed">
-  <img id="header-logo" src="" alt="BROTHER GREEN" class="h-8 hidden"/>
-  <span id="header-logo-text">BROTHER GREEN</span>
+  <label for="header-logo-input" class="cursor-pointer group/logo flex items-center gap-2">
+    <img id="header-logo" src="" alt="BROTHER GREEN" class="h-10 hidden object-contain"/>
+    <span id="header-logo-text">BROTHER GREEN</span>
+    <span id="header-logo-edit" class="material-symbols-outlined text-base text-on-surface-variant opacity-0 group-hover/logo:opacity-100 transition-opacity hidden" title="로고 변경">edit</span>
+  </label>
+  <input id="header-logo-input" type="file" accept="image/*,.svg" class="hidden"/>
 </h1>
 </div>
 <div class="flex items-center gap-6">
@@ -387,6 +391,9 @@
             const headerLogo = document.getElementById('header-logo');
             const headerLogoText = document.getElementById('header-logo-text');
 
+            const headerLogoInput = document.getElementById('header-logo-input');
+            const headerLogoEdit = document.getElementById('header-logo-edit');
+
             function applyLogo(dataUrl, name) {
                 logoPreview.src = dataUrl;
                 logoFilename.textContent = name;
@@ -394,14 +401,21 @@
                 logoPlaceholder.classList.add('hidden');
                 logoClearBtn.classList.remove('hidden');
                 // Show in header
-                if (dataUrl.startsWith('data:image')) {
-                    headerLogo.src = dataUrl;
-                    headerLogo.classList.remove('hidden');
-                    headerLogoText.classList.add('hidden');
-                }
+                headerLogo.src = dataUrl;
+                headerLogo.classList.remove('hidden');
+                headerLogoText.classList.add('hidden');
+                headerLogoEdit.classList.remove('hidden');
                 localStorage.setItem('bg_logo', dataUrl);
                 localStorage.setItem('bg_logo_name', name);
             }
+
+            headerLogoInput.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
+                const reader = new FileReader();
+                reader.onload = (ev) => applyLogo(ev.target.result, file.name);
+                reader.readAsDataURL(file);
+            });
 
             function clearLogo() {
                 logoPreview.src = '';
@@ -412,6 +426,7 @@
                 headerLogo.src = '';
                 headerLogo.classList.add('hidden');
                 headerLogoText.classList.remove('hidden');
+                headerLogoEdit.classList.add('hidden');
                 localStorage.removeItem('bg_logo');
                 localStorage.removeItem('bg_logo_name');
             }
